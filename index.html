@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamza Ahmad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Instrument+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper: #f7f4ef;
+  --white: #ffffff;
+  --ink: #111010;
+  --mid: #7a756e;
+  --rule: #e0dbd3;
+  --accent: #d4380d;
+  --ff-serif: 'Libre Baskerville', Georgia, serif;
+  --ff-sans: 'Instrument Sans', sans-serif;
+  --ff-mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--ff-sans);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 500;
+  padding: 1.5rem 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(247,244,239,0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.nav-logo {
+  font-family: var(--ff-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--ff-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--mid);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+.nav-status {
+  font-family: var(--ff-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-status::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #3a7d5a;
+  flex-shrink: 0;
+}
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  padding: 0 4.5rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding-top: 6rem;
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.hero-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 0 2rem;
+}
+
+.hero-statement {
+  font-family: var(--ff-serif);
+  font-size: clamp(3.8rem, 8.5vw, 9.5rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  max-width: 18ch;
+  margin-bottom: 4rem;
+}
+
+.hero-statement em {
+  font-style: italic;
+  color: var(--mid);
+}
+
+.hero-statement .red {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.hero-foot {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  padding: 2.5rem 0;
+  border-top: 0.5px solid var(--rule);
+}
+
+.hf-block {}
+
+.hf-label {
+  font-family: var(--ff-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 0.8rem;
+}
+
+.hf-text {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--mid);
+  max-width: 36ch;
+}
+.hf-text strong { color: var(--ink); font-weight: 400; }
+
+.hf-ctas {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.btn-primary {
+  font-family: var(--ff-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 0.82rem 1.8rem;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--accent); }
+
+.btn-ghost {
+  font-family: var(--ff-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--mid);
+  transition: color 0.2s;
+}
+.btn-ghost:hover { color: var(--ink); }
+
+/* ── SHARED SECTION STRUCTURE ── */
+.section-wrap {
+  padding: 6rem 4.5rem;
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.section-wrap.dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.section-wrap.white {
+  background: var(--white);
+}
+
+.sec-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.sec-n {
+  font-family: var(--ff-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  color: var(--mid);
+}
+.dark .sec-n { color: rgba(247,244,239,0.25); }
+
+.sec-h {
+  font-family: var(--ff-serif);
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+.dark .sec-h { color: var(--paper); }
+
+.sec-h em {
+  font-style: italic;
+  color: var(--mid);
+}
+.dark .sec-h em { color: rgba(247,244,239,0.3); }
+
+/* ── PROACTIVE / THINKING SECTION ── */
+#thinking {}
+
+.thinking-intro {
+  font-family: var(--ff-serif);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--mid);
+  max-width: 62ch;
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 0.5px solid var(--rule);
+}
+.thinking-intro strong { color: var(--ink); font-style: normal; }
+
+.thinking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5px;
+  background: var(--rule);
+  border: 0.5px solid var(--rule);
+  margin-bottom: 0.5px;
+}
+
+.thinking-grid.bottom-row {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.t-card {
+  background: var(--paper);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  cursor: pointer;
+  transition: background 0.35s;
+  position: relative;
+  overflow: hidden;
+}
+
+.t-card:hover { background: var(--ink); }
+.t-card:hover .tc-n,
+.t-card:hover .tc-type { color: rgba(247,244,239,0.25); }
+.t-card:hover .tc-title { color: var(--paper); }
+.t-card:hover .tc-body { color: rgba(247,244,239,0.5); }
+.t-card:hover .tc-arrow { color: rgba(247,244,239,0.3); transform: translate(3px,-3px); }
+
+.tc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2.5rem;
+}
+
+.tc-n {
+  font-family: var(--ff-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: var(--rule);
+  transition: color 0.3s;
+}
+
+.tc-type {
+  font-family: var(--ff-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid);
+  transition: color 0.3s;
+}
+
+.tc-title {
+  font-family: var(--ff-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+  transition: color 0.3s;
+  flex: 1;
+}
+
+.t-card.large .tc-title {
+  font-size: 1.7rem;
+}
+
+.tc-body {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--mid);
+  transition: color 0.3s;
+  margin-bottom: 1.5rem;
+}
+
+.tc-arrow {
+  align-self: flex-end;
+  font-size: 1rem;
+  color: var(--rule);
+  transition: color 0.3s, transform 0.2s;
+  margin-top: auto;
+}
+
+/* ── WORK SECTION ── */
+#work {}
+
+.work-rows { display: flex; flex-direction: column; }
+
+.w-row {
+  display: grid;
+  grid-template-columns: 3rem 1fr 1fr;
+  gap: 3rem;
+  padding: 3rem 0;
+  border-bottom: 0.5px solid var(--rule);
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 0 -4.5rem;
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  position: relative;
+}
+.w-row:last-child { border-bottom: none; }
+.w-row:hover { background: var(--white); }
+.w-row:hover .wr-img { opacity: 1; transform: scale(1.02); }
+.w-row:hover .wr-arrow { color: var(--ink); transform: translate(3px,-3px); }
+
+.wr-num {
+  font-family: var(--ff-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: var(--rule);
+  padding-top: 0.3rem;
+}
+
+.wr-left {}
+
+.wr-brand {
+  font-family: var(--ff-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 0.7rem;
+}
+
+.wr-title {
+  font-family: var(--ff-serif);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.wr-desc {
+  font-size: 0.87rem;
+  line-height: 1.75;
+  color: var(--mid);
+  max-width: 52ch;
+}
+
+.wr-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.wr-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: flex-end;
+}
+
+.wr-tag {
+  font-family: var(--ff-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.55rem;
+  border: 0.5px solid var(--rule);
+  color: var(--mid);
+}
+
+.wr-img {
+  width: 140px;
+  height: 90px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.35s, transform 0.35s;
+  filter: grayscale(15%);
+  margin-top: 1rem;
+}
+
+.wr-arrow {
+  font-size: 0.9rem;
+  color: var(--rule);
+  transition: color 0.2s, transform 0.2s;
+  position: absolute;
+  right: 4.5rem;
+  top: 3rem;
+}
+
+/* ── ABOUT (dark) ── */
+#about {}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 8rem;
+  align-items: start;
+}
+
+.about-body p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: rgba(247,244,239,0.55);
+  margin-bottom: 1.5rem;
+  max-width: 58ch;
+}
+.about-body strong { color: var(--paper); font-weight: 400; }
+.about-body em {
+  font-style: italic;
+  font-family: var(--ff-serif);
+  color: rgba(247,244,239,0.8);
+}
+
+.about-pull {
+  font-family: var(--ff-serif);
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(247,244,239,0.4);
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 0.5px solid rgba(247,244,239,0.08);
+}
+
+.about-sidebar {}
+
+.exp-list { list-style: none; margin-bottom: 2.5rem; }
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 0.5px solid rgba(247,244,239,0.07);
+}
+
+.exp-role {
+  font-size: 0.87rem;
+  color: rgba(247,244,239,0.65);
+  font-weight: 300;
+}
+
+.exp-co {
+  font-family: var(--ff-serif);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: rgba(247,244,239,0.3);
+  margin-top: 0.15rem;
+}
+
+.exp-yr {
+  font-family: var(--ff-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  color: rgba(247,244,239,0.18);
+  white-space: nowrap;
+  padding-top: 0.2rem;
+}
+
+.about-brands {
+  font-family: var(--ff-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(247,244,239,0.2);
+  line-height: 2.2;
+}
+
+/* ── STUDIO ── */
+#studio {}
+
+.studio-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 0.5px solid var(--rule);
+  align-items: end;
+}
+
+.studio-headline {
+  font-family: var(--ff-serif);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.studio-headline em { font-style: italic; color: var(--mid); }
+
+.studio-desc {
+  font-size: 0.93rem;
+  line-height: 1.8;
+  color: var(--mid);
+  max-width: 42ch;
+}
+.studio-desc strong { color: var(--ink); font-weight: 400; }
+
+.srv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5px;
+  background: var(--rule);
+  border: 0.5px solid var(--rule);
+}
+
+.srv {
+  background: var(--paper);
+  padding: 2.5rem;
+  transition: background 0.3s;
+}
+.srv:hover { background: var(--white); }
+
+.srv-n {
+  font-family: var(--ff-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.12em;
+  color: var(--rule);
+  margin-bottom: 1.8rem;
+}
+
+.srv-title {
+  font-family: var(--ff-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+  line-height: 1.35;
+}
+
+.srv-body {
+  font-size: 0.84rem;
+  line-height: 1.72;
+  color: var(--mid);
+}
+
+/* ── CONTACT ── */
+#contact {
+  padding: 7rem 4.5rem;
+  border-bottom: none;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 8rem;
+  align-items: end;
+}
+
+.contact-big {
+  font-family: var(--ff-serif);
+  font-size: clamp(3rem, 7vw, 8rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+.contact-big em { font-style: italic; color: var(--mid); }
+
+.contact-r {}
+
+.contact-desc {
+  font-size: 0.92rem;
+  line-height: 1.82;
+  color: var(--mid);
+  max-width: 40ch;
+  margin-bottom: 2.5rem;
+}
+.contact-desc strong { color: var(--ink); font-weight: 400; }
+
+.contact-list { list-style: none; margin-bottom: 2.5rem; }
+
+.contact-list li {
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.contact-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0;
+  font-family: var(--ff-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--mid);
+  transition: color 0.2s;
+}
+.contact-list a:hover { color: var(--ink); }
+.contact-list a span { opacity: 0.35; font-size: 0.85rem; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  padding: 1.5rem 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.f-logo {
+  font-family: var(--ff-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(247,244,239,0.25);
+}
+
+.f-copy {
+  font-family: var(--ff-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(247,244,239,0.15);
+}
+
+/* ── TICKER ── */
+.ticker {
+  background: var(--ink);
+  overflow: hidden;
+  padding: 0.75rem 0;
+}
+
+.ticker-track {
+  display: flex;
+  gap: 0;
+  animation: tick 30s linear infinite;
+  white-space: nowrap;
+}
+
+.t-item {
+  font-family: var(--ff-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(247,244,239,0.2);
+  padding: 0 2rem;
+  border-right: 0.5px solid #1e1c1a;
+  flex-shrink: 0;
+}
+.t-item.on { color: rgba(247,244,239,0.55); }
+
+@keyframes tick {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── REVEAL ── */
+.r {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.r.in { opacity: 1; transform: none; }
+.r.d1 { transition-delay: 0.08s; }
+.r.d2 { transition-delay: 0.16s; }
+.r.d3 { transition-delay: 0.24s; }
+.r.d4 { transition-delay: 0.32s; }
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-links, .nav-status { display: none; }
+  #hero, .section-wrap, #contact { padding-left: 2rem; padding-right: 2rem; }
+  .hero-foot { grid-template-columns: 1fr; }
+  .thinking-grid, .thinking-grid.bottom-row { grid-template-columns: 1fr; }
+  .w-row { grid-template-columns: 1fr; margin: 0; padding-left: 0; padding-right: 0; }
+  .wr-right { align-items: flex-start; margin-top: 1rem; }
+  .wr-img { display: none; }
+  .wr-arrow { right: 0; }
+  .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .studio-intro { grid-template-columns: 1fr; gap: 2rem; }
+  .srv-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Hamza Ahmad</a>
+  <ul class="nav-links">
+    <li><a href="#thinking">Thinking</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#studio">Studio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <span class="nav-status">Available for the right brief</span>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-main">
+    <h1 class="hero-statement r">
+      The idea<br>
+      is the<br>
+      <span class="red">thing.</span>
+    </h1>
+  </div>
+
+  <div class="hero-foot">
+    <div class="hf-block r d1">
+      <div class="hf-label">What I do</div>
+      <p class="hf-text">
+        I find the idea others miss. Then I make sure it survives contact with the real world — <strong>strategy, language, direction.</strong> Whatever the brief needs.
+      </p>
+    </div>
+
+    <div class="hf-block r d2">
+      <div class="hf-label">Who I've done it for</div>
+      <p class="hf-text">
+        <strong>IKEA. Royal Salute. Google. Jameson. Unilever. P&G.</strong> Across agencies and in-house. Mumbai to Malmö. 10+ years, 20+ brands, 31 markets.
+      </p>
+    </div>
+
+    <div class="hf-ctas r d3">
+      <a href="#thinking" class="btn-primary">See the thinking</a>
+      <a href="#contact" class="btn-ghost">Get in touch →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="t-item on">IKEA</span><span class="t-item">Royal Salute</span><span class="t-item on">Jameson</span><span class="t-item">Google</span><span class="t-item on">Unilever</span><span class="t-item">P&amp;G</span><span class="t-item on">Nivea</span><span class="t-item">Axis Bank</span><span class="t-item on">Leo Burnett</span><span class="t-item">Saatchi &amp; Saatchi</span><span class="t-item on">Mullen Lowe</span><span class="t-item">Foodpanda</span><span class="t-item on">Corona</span><span class="t-item">Freecharge</span>
+    <span class="t-item on">IKEA</span><span class="t-item">Royal Salute</span><span class="t-item on">Jameson</span><span class="t-item">Google</span><span class="t-item on">Unilever</span><span class="t-item">P&amp;G</span><span class="t-item on">Nivea</span><span class="t-item">Axis Bank</span><span class="t-item on">Leo Burnett</span><span class="t-item">Saatchi &amp; Saatchi</span><span class="t-item on">Mullen Lowe</span><span class="t-item">Foodpanda</span><span class="t-item on">Corona</span><span class="t-item">Freecharge</span>
+  </div>
+</div>
+
+<!-- THINKING (leads) -->
+<div class="section-wrap" id="thinking">
+  <div class="sec-meta r">
+    <span class="sec-n">01</span>
+    <h2 class="sec-h">The <em>Thinking</em></h2>
+  </div>
+
+  <p class="thinking-intro r d1">
+    This is where I start. Proactive work — ideas made without a brief, or well beyond what the brief asked for. <strong>The work that follows is the proof. This is the reason.</strong>
+  </p>
+
+  <div class="thinking-grid">
+    <div class="t-card large r d1">
+      <div class="tc-top">
+        <span class="tc-n">01</span>
+        <span class="tc-type">Campaign Idea · OOH</span>
+      </div>
+      <h3 class="tc-title">Foodpanda covered its own billboards for Ramadan. And won.</h3>
+      <p class="tc-body">During fasting hours, Foodpanda's outdoor ads drew curtains over themselves. The logo became "foodpaRda." An act of cultural empathy that turned restraint into the most-talked-about OOH of the month — and asked nothing from the audience except respect.</p>
+      <span class="tc-arrow">↗</span>
+    </div>
+
+    <div class="t-card large r d2">
+      <div class="tc-top">
+        <span class="tc-n">02</span>
+        <span class="tc-type">Campaign Idea · Experiential</span>
+      </div>
+      <h3 class="tc-title">Corona gave away free concert tickets. The catch: clean the beach first.</h3>
+      <p class="tc-body">The stage was curtained. The music only started when a target weight of beach plastic had been collected. A weigh-scale drove the reveal. Metallica, Coldplay, Beyoncé — all behind a curtain that the crowd moved together to lift. Sustainability as spectacle, not sermon.</p>
+      <span class="tc-arrow">↗</span>
+    </div>
+  </div>
+
+  <div class="thinking-grid bottom-row">
+    <div class="t-card r d1">
+      <div class="tc-top">
+        <span class="tc-n">03</span>
+        <span class="tc-type">Tech Idea · Product</span>
+      </div>
+      <h3 class="tc-title">Google Maps as a fog radar for highway pile-ups</h3>
+      <p class="tc-body">4G connectivity, phone-to-phone signals, no new hardware. A Maps feature that tells you what's stopped ahead — even when you can't see it. A human problem solved with existing technology.</p>
+      <span class="tc-arrow">↗</span>
+    </div>
+
+    <div class="t-card r d2">
+      <div class="tc-top">
+        <span class="tc-n">04</span>
+        <span class="tc-type">Tech Idea · Experiential</span>
+      </div>
+      <h3 class="tc-title">Google's Silent Visarjan — a festival, without the noise ban</h3>
+      <p class="tc-body">Mumbai's Ganesh festival faced noise restrictions. Google's answer: Bluetooth speakers, A-list DJs, and 10,000 people dancing silently through the streets. Technology as cultural bridge, not cultural replacement.</p>
+      <span class="tc-arrow">↗</span>
+    </div>
+
+    <div class="t-card r d3">
+      <div class="tc-top">
+        <span class="tc-n">05</span>
+        <span class="tc-type">Spec · Brand Strategy</span>
+      </div>
+      <h3 class="tc-title">What Is Sleep? — A philosophical campaign for Hästens</h3>
+      <p class="tc-body">Not a product ad. An inquiry. Into rest, recovery, and what we lose when we accept less than extraordinary sleep. Built without a brief because the brand deserved better than what briefs usually produce.</p>
+      <span class="tc-arrow">↗</span>
+    </div>
+  </div>
+</div>
+
+<!-- WORK -->
+<div class="section-wrap white" id="work">
+  <div class="sec-meta r">
+    <span class="sec-n">02</span>
+    <h2 class="sec-h">Client <em>Work</em></h2>
+  </div>
+
+  <div class="work-rows">
+
+    <div class="w-row r">
+      <span class="wr-num">01</span>
+      <div class="wr-left">
+        <div class="wr-brand">IKEA · Global Campaign</div>
+        <h3 class="wr-title">The Diversity Film That Crossed 31 Markets</h3>
+        <p class="wr-desc">One film adopted across 31 countries without a word changed. Built on the insight that real inclusion doesn't need explanation — it just needs to be true. That starts at the brief, not the edit.</p>
+      </div>
+      <div class="wr-right">
+        <div class="wr-tags">
+          <span class="wr-tag">Film</span>
+          <span class="wr-tag">Global</span>
+          <span class="wr-tag">Inclusion</span>
+        </div>
+        <img class="wr-img" src="https://static.wixstatic.com/media/34996b_8268b2e516904ebf878e32eb8fa99c9d~mv2.jpg/v1/fill/w_748,h_1080,al_c,q_85,enc_avif,quality_auto/GC-CF-Buyback-FY24-Store-WallGraphic-180x260cm-1_page-00012.jpg" alt="IKEA">
+      </div>
+      <span class="wr-arrow">↗</span>
+    </div>
+
+    <div class="w-row r d1">
+      <span class="wr-num">02</span>
+      <div class="wr-left">
+        <div class="wr-brand">Royal Salute · Event Print</div>
+        <h3 class="wr-title">The Weight of a Word</h3>
+        <p class="wr-desc">When the brand is already iconic, the copy has nowhere to hide. A long-copy event poster for one of Scotland's most storied whiskies. Every word deliberate. Every silence intentional.</p>
+      </div>
+      <div class="wr-right">
+        <div class="wr-tags">
+          <span class="wr-tag">Print</span>
+          <span class="wr-tag">Luxury</span>
+          <span class="wr-tag">Long Copy</span>
+        </div>
+        <img class="wr-img" src="https://static.wixstatic.com/media/34996b_36e689ff4dda4700a635af41f4c5979d~mv2.png/v1/fill/w_980,h_1549,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/1.png" alt="Royal Salute">
+      </div>
+      <span class="wr-arrow">↗</span>
+    </div>
+
+    <div class="w-row r d1">
+      <span class="wr-num">03</span>
+      <div class="wr-left">
+        <div class="wr-brand">Jameson · Campaign</div>
+        <h3 class="wr-title">Smooth Doesn't Mean Easy</h3>
+        <p class="wr-desc">The brief was to make Jameson feel both accessible and genuinely crafted. The tension between those two things turned out to be the campaign. Irish warmth as a philosophy, not a persona.</p>
+      </div>
+      <div class="wr-right">
+        <div class="wr-tags">
+          <span class="wr-tag">Campaign</span>
+          <span class="wr-tag">Brand Voice</span>
+          <span class="wr-tag">Print</span>
+        </div>
+        <img class="wr-img" src="https://static.wixstatic.com/media/34996b_5aeb6ba8532c488699bba87b832d6353~mv2.png/v1/fill/w_979,h_477,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/1.png" alt="Jameson">
+      </div>
+      <span class="wr-arrow">↗</span>
+    </div>
+
+    <div class="w-row r d2">
+      <span class="wr-num">04</span>
+      <div class="wr-left">
+        <div class="wr-brand">Axis Bank · Three Campaign Suites</div>
+        <h3 class="wr-title">Dining Delights · Sarkar Loans · Burgundy</h3>
+        <p class="wr-desc">Three tonal registers for the same bank — populist, authoritative, ultra-premium. The thinking adapts to the audience, not the other way around. That range is the proof of concept.</p>
+      </div>
+      <div class="wr-right">
+        <div class="wr-tags">
+          <span class="wr-tag">Finance</span>
+          <span class="wr-tag">Print</span>
+          <span class="wr-tag">Premium</span>
+        </div>
+        <img class="wr-img" src="https://static.wixstatic.com/media/34996b_bb22c881e0804d9283f662e9644390cf~mv2.png/v1/fill/w_979,h_644,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/3_1.png" alt="Axis Bank">
+      </div>
+      <span class="wr-arrow">↗</span>
+    </div>
+
+    <div class="w-row r d1">
+      <span class="wr-num">05</span>
+      <div class="wr-left">
+        <div class="wr-brand">Nivea · Digital</div>
+        <h3 class="wr-title">Nivea Plastic Counter — The Tool That Made You Choose</h3>
+        <p class="wr-desc">A web tool that showed consumers exactly how much plastic their current skincare brand used. Entered your brand, saw your carbon footprint. Nivea Naturally Good always came out cleaner. Sustainability as utility, not guilt.</p>
+      </div>
+      <div class="wr-right">
+        <div class="wr-tags">
+          <span class="wr-tag">Digital</span>
+          <span class="wr-tag">Sustainability</span>
+          <span class="wr-tag">UX Thinking</span>
+        </div>
+      </div>
+      <span class="wr-arrow">↗</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section-wrap dark" id="about">
+  <div class="sec-meta r">
+    <span class="sec-n">03</span>
+    <h2 class="sec-h">About</h2>
+  </div>
+
+  <div class="about-inner">
+    <div class="about-body">
+      <p class="about-pull r">"I'm not a copywriter who occasionally thinks about strategy. I'm a <em>creative thinker</em> who happens to be lethal with language."</p>
+      <p class="r d1">Over ten years across <strong>Mumbai agency floors, global in-house teams, and a one-person studio in Malmö</strong> — the range is deliberate. Agency discipline. Client-side accountability. Independent freedom. Each one made the thinking better.</p>
+      <p class="r d2">I've written for audiences from <strong>UHNW whisky collectors</strong> to first-time digital banking users, in categories from luxury goods to fast food to financial services. The method doesn't change. Start with a true human insight. Find the surprising angle. Execute with craft.</p>
+      <p class="r d3">I work at the intersection of <strong>strategy, language, and cultural fluency</strong>. I understand AI creative tools not as someone who fears them, but as someone who has built with them and knows precisely where the human has to step back in. That gap is where I work.</p>
+      <p class="r d4">Based in <strong>Malmö</strong>. Open to Europe and beyond. Full-time, freelance, or consulting — for the right brief.</p>
+    </div>
+
+    <div class="about-sidebar r d2">
+      <ul class="exp-list">
+        <li class="exp-item">
+          <div><div class="exp-role">Copywriter</div><div class="exp-co">IKEA · Freelance</div></div>
+          <span class="exp-yr">2023—Now</span>
+        </li>
+        <li class="exp-item">
+          <div><div class="exp-role">Copy Partner</div><div class="exp-co">Infectious Advertising</div></div>
+          <span class="exp-yr">2020—21</span>
+        </li>
+        <li class="exp-item">
+          <div><div class="exp-role">Copywriter</div><div class="exp-co">Leo Burnett</div></div>
+          <span class="exp-yr">2018—20</span>
+        </li>
+        <li class="exp-item">
+          <div><div class="exp-role">Copywriter</div><div class="exp-co">Mullen Lowe Lintas</div></div>
+          <span class="exp-yr">2015—18</span>
+        </li>
+        <li class="exp-item">
+          <div><div class="exp-role">MBA · International Business</div><div class="exp-co">Aligarh Muslim University</div></div>
+          <span class="exp-yr">2013—15</span>
+        </li>
+      </ul>
+      <div class="about-brands r d3">
+        IKEA · Royal Salute · Jameson · Google<br>
+        Nivea · Unilever · P&G · Axis Bank<br>
+        Foodpanda · Corona · Freecharge · Tata<br>
+        Leo Burnett · Saatchi · Mullen Lowe
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STUDIO -->
+<div class="section-wrap" id="studio">
+  <div class="sec-meta r">
+    <span class="sec-n">04</span>
+    <h2 class="sec-h">CopyThat <em>Studio</em></h2>
+  </div>
+
+  <div class="studio-intro">
+    <h3 class="studio-headline r">Senior thinking.<br><em>No overhead.</em></h3>
+    <p class="studio-desc r d2">
+      A one-person creative studio. I work with brands and agencies that need a <strong>creative partner who brings the idea</strong> — not just executes the brief. Production contacts in India. Senior judgment everywhere else.
+    </p>
+  </div>
+
+  <div class="srv-grid">
+    <div class="srv r"><div class="srv-n">01</div><div class="srv-title">Brand Strategy &amp; Positioning</div><p class="srv-body">Finding what the brand stands for that no competitor can claim — then articulating it with precision that survives a boardroom.</p></div>
+    <div class="srv r d1"><div class="srv-n">02</div><div class="srv-title">Campaign Concepting</div><p class="srv-body">The single organising idea that makes everything else possible. Found, articulated, and shown to scale across channels and markets.</p></div>
+    <div class="srv r d2"><div class="srv-n">03</div><div class="srv-title">Creative Direction</div><p class="srv-body">From brief through execution — maintaining the idea's integrity across every asset, every touchpoint, every market.</p></div>
+    <div class="srv r d1"><div class="srv-n">04</div><div class="srv-title">Brand Voice &amp; Naming</div><p class="srv-body">Names, taglines, tone-of-voice guidelines, long copy. Written to last — not to tick a brief or please a committee.</p></div>
+    <div class="srv r d2"><div class="srv-n">05</div><div class="srv-title">Cultural Strategy</div><p class="srv-body">Deep fluency across India, Scandinavia, and the Middle East. The nuance that makes or breaks a global brief — from inside the culture, not looking in.</p></div>
+    <div class="srv r d3"><div class="srv-n">06</div><div class="srv-title">AI Creative Direction</div><p class="srv-body">Scalable content pipelines with a senior creative in the loop. Speed without the loss of soul. Built, shaped, quality-controlled.</p></div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <h2 class="contact-big r">
+      Let's make<br>something<br><em>worth<br>making.</em>
+    </h2>
+    <div class="contact-r r d2">
+      <p class="contact-desc">
+        Senior creative roles, freelance projects, consulting retainers. <strong>For the brief that actually needs thinking</strong> — not just execution.
+      </p>
+      <ul class="contact-list">
+        <li><a href="mailto:hello@hamza-writes.com">Email <span>↗</span></a></li>
+        <li><a href="https://linkedin.com/in/hamza-ahmad-47722960" target="_blank">LinkedIn <span>↗</span></a></li>
+        <li><a href="#">Download CV <span>↗</span></a></li>
+      </ul>
+      <a href="mailto:hello@hamza-writes.com" class="btn-primary">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="f-logo">Hamza Ahmad</span>
+  <span class="f-copy">© 2026 · CopyThat Studio · Malmö, Sweden</span>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.05 });
+
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+setTimeout(() => {
+  document.querySelectorAll('#hero .r').forEach(el => el.classList.add('in'));
+}, 60);
+</script>
+</body>
+</html>
