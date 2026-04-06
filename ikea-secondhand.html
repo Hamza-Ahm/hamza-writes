@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IKEA Second-hand — Hamza Ahmad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Instrument+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root { --paper: #f7f4ef; --white: #ffffff; --ink: #111010; --mid: #7a756e; --rule: #e0dbd3; --accent: #d4380d; --ff-serif: 'Libre Baskerville', Georgia, serif; --ff-sans: 'Instrument Sans', sans-serif; --ff-mono: 'DM Mono', monospace; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--paper); color: var(--ink); font-family: var(--ff-sans); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+
+nav { position: fixed; inset: 0 0 auto 0; z-index: 500; padding: 1.5rem 4.5rem; display: flex; justify-content: space-between; align-items: center; background: rgba(247,244,239,0.94); backdrop-filter: blur(14px); border-bottom: 0.5px solid var(--rule); }
+.nav-logo { font-family: var(--ff-serif); font-size: 0.95rem; font-weight: 700; text-decoration: none; color: var(--ink); }
+.nav-back { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--mid); transition: color 0.2s; }
+.nav-back:hover { color: var(--ink); }
+
+.case-hero { padding: 10rem 4.5rem 5rem; border-bottom: 0.5px solid var(--rule); }
+.case-eyebrow { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 2rem; }
+.case-title { font-family: var(--ff-serif); font-size: clamp(3rem, 7vw, 7rem); font-weight: 400; line-height: 0.98; letter-spacing: -0.025em; margin-bottom: 3rem; max-width: 16ch; }
+.case-title em { font-style: italic; color: var(--mid); }
+.case-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding-top: 3rem; border-top: 0.5px solid var(--rule); }
+.meta-item {}
+.meta-label { font-family: var(--ff-mono); font-size: 0.52rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.4rem; }
+.meta-val { font-size: 0.9rem; color: var(--ink); }
+
+.case-section { padding: 5rem 4.5rem; border-bottom: 0.5px solid var(--rule); }
+.case-section.dark { background: var(--ink); color: var(--paper); }
+
+.case-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.case-desc { font-family: var(--ff-serif); font-size: clamp(1.1rem, 1.8vw, 1.45rem); font-weight: 400; line-height: 1.7; color: var(--mid); }
+.case-desc strong { color: var(--ink); font-style: normal; }
+.case-body p { font-size: 0.95rem; line-height: 1.85; color: var(--mid); margin-bottom: 1.4rem; }
+.case-body strong { color: var(--ink); font-weight: 400; }
+
+.video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; }
+.video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+.video-label { font-family: var(--ff-mono); font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-bottom: 3rem; }
+
+.video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+.video-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+
+.img-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-bottom: 3px; }
+.img-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+.img-grid img, .img-grid-2 img { width: 100%; height: 400px; object-fit: cover; display: block; filter: grayscale(10%); transition: filter 0.3s; }
+.img-grid img:hover, .img-grid-2 img:hover { filter: grayscale(0%); }
+.img-grid .tall { height: 600px; }
+
+.case-pull { font-family: var(--ff-serif); font-size: clamp(1.5rem, 3vw, 2.8rem); font-weight: 400; font-style: italic; line-height: 1.3; letter-spacing: -0.015em; color: rgba(247,244,239,0.5); max-width: 22ch; margin-bottom: 3rem; }
+.case-pull strong { color: var(--paper); font-style: normal; }
+
+.nav-case { padding: 4rem 4.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; border-top: 0.5px solid var(--rule); }
+.nav-case-item { text-decoration: none; color: inherit; padding: 2rem; border: 0.5px solid var(--rule); transition: background 0.2s; }
+.nav-case-item:hover { background: var(--white); }
+.nav-case-label { font-family: var(--ff-mono); font-size: 0.52rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.5rem; }
+.nav-case-title { font-family: var(--ff-serif); font-size: 1.1rem; font-weight: 400; color: var(--ink); }
+
+footer { background: var(--ink); padding: 1.5rem 4.5rem; display: flex; justify-content: space-between; align-items: center; }
+.f-logo { font-family: var(--ff-serif); font-size: 0.85rem; font-weight: 700; color: rgba(247,244,239,0.25); }
+.f-copy { font-family: var(--ff-mono); font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(247,244,239,0.15); }
+
+@media (max-width: 900px) {
+  nav, .case-hero, .case-section, .nav-case { padding-left: 2rem; padding-right: 2rem; }
+  .case-meta { grid-template-columns: 1fr 1fr; }
+  .case-intro { grid-template-columns: 1fr; gap: 2rem; }
+  .video-grid, .video-grid-3 { grid-template-columns: 1fr; }
+  .img-grid { grid-template-columns: 1fr 1fr; }
+  .img-grid img { height: 220px; }
+  .nav-case { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Hamza Ahmad</a>
+  <a href="index.html" class="nav-back">← All Work</a>
+</nav>
+
+<!-- HERO -->
+<div class="case-hero">
+  <p class="case-eyebrow">IKEA · Second-hand · FY25 · European Markets</p>
+  <h1 class="case-title">Get Ready to Be <em>Surprised.</em></h1>
+  <div class="case-meta">
+    <div class="meta-item"><div class="meta-label">Brand</div><div class="meta-val">IKEA</div></div>
+    <div class="meta-item"><div class="meta-label">Type</div><div class="meta-val">Film · Print · In-store</div></div>
+    <div class="meta-item"><div class="meta-label">Market</div><div class="meta-val">Europe · Multiple Markets</div></div>
+    <div class="meta-item"><div class="meta-label">Deliverables</div><div class="meta-val">3 Films · 7 Posters</div></div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="case-section">
+  <div class="case-intro">
+    <p class="case-desc">IKEA Second-hand is a pre-loved furniture offering that lets customers buy and sell used IKEA pieces in-store. The challenge: make second-hand feel like <strong>a discovery, not a compromise.</strong></p>
+    <div class="case-body">
+      <p>The insight was simple. IKEA furniture is built to last — which means second-hand IKEA is a genuinely good deal. The quality doesn't diminish. Only the price does. That's genuinely surprising.</p>
+      <p>The campaign platform "Get ready to be surprised" let us express each benefit — price, quality, convenience, returns policy — through the lens of human reaction. Every poster shows someone genuinely delighted. Every film earns that reaction.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN FILM -->
+<div class="case-section" style="background: var(--white);">
+  <p class="video-label">Main Campaign Film</p>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/dACqmGhCwBY" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <div class="video-grid">
+    <div>
+      <p class="video-label">Short — Version 1</p>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/O5fAen_wLhA" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+    <div>
+      <p class="video-label">Short — Version 2</p>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/lOl9HGJ6khw" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POSTERS -->
+<div class="case-section">
+  <p class="video-label">Store Posters — A2 · 7 Executions</p>
+  <div class="img-grid">
+    <img src="ikea-secondhand-1.jpg" alt="Quality that always gets a reaction">
+    <img src="ikea-secondhand-2.jpg" alt="Below budget, above expectations">
+    <img src="ikea-secondhand-3.jpg" alt="Offers so good, you'll fall in love">
+    <img src="ikea-secondhand-4.jpg" alt="A returns policy that's jaw-dropping">
+    <img src="ikea-secondhand-5.jpg" alt="Quality that makes space for play">
+    <img src="ikea-secondhand-6.jpg" alt="Some offers just make you dance">
+  </div>
+  <div class="img-grid-2">
+    <img src="ikea-secondhand-7.jpg" alt="Pre-assembled, so you don't have to">
+    <img src="ikea-instore.jpg" alt="IKEA in-store">
+  </div>
+</div>
+
+<!-- DARK PULL -->
+<div class="case-section dark">
+  <p class="case-pull">"The quality doesn't diminish. <strong>Only the price does.</strong> That's genuinely surprising."</p>
+  <div class="case-body" style="color: rgba(247,244,239,0.55); max-width: 60ch;">
+    <p>Seven poster executions, each finding a different human truth about pre-loved furniture. "Below budget, above expectations." "A returns policy that's jaw-dropping." "Pre-assembled, so you don't have to." Each one earns its reaction. None of them feel like an ad.</p>
+  </div>
+</div>
+
+<!-- CASE NAV -->
+<div class="nav-case">
+  <a href="ikea-buyback.html" class="nav-case-item">
+    <div class="nav-case-label">← Previous</div>
+    <div class="nav-case-title">IKEA Buyback Campaign</div>
+  </a>
+  <a href="biozyme.html" class="nav-case-item" style="text-align: right;">
+    <div class="nav-case-label">Next →</div>
+    <div class="nav-case-title">Biozyme Brand Film</div>
+  </a>
+</div>
+
+<footer>
+  <span class="f-logo">Hamza Ahmad</span>
+  <span class="f-copy">© 2026 · CopyThat Studio · Malmö, Sweden</span>
+</footer>
+</body>
+</html>
