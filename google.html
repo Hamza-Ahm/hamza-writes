@@ -1,153 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Google India — Hamza Ahmad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Instrument+Sans:wght@300;400&display=swap" rel="stylesheet">
 <style>
-:root { --paper: #f7f4ef; --white: #ffffff; --ink: #111010; --mid: #7a756e; --rule: #e0dbd3; --accent: #d4380d; --ff-serif: 'Libre Baskerville', Georgia, serif; --ff-sans: 'Instrument Sans', sans-serif; --ff-mono: 'DM Mono', monospace; }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--paper); color: var(--ink); font-family: var(--ff-sans); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
-nav { position: fixed; inset: 0 0 auto 0; z-index: 500; padding: 1.5rem 4.5rem; display: flex; justify-content: space-between; align-items: center; background: rgba(247,244,239,0.94); backdrop-filter: blur(14px); border-bottom: 0.5px solid var(--rule); }
-.nav-logo { font-family: var(--ff-serif); font-size: 0.95rem; font-weight: 700; text-decoration: none; color: var(--ink); }
-.nav-back { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--mid); transition: color 0.2s; }
-.nav-back:hover { color: var(--ink); }
-.case-hero { padding: 10rem 4.5rem 5rem; border-bottom: 0.5px solid var(--rule); }
-.case-eyebrow { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 2rem; }
-.case-title { font-family: var(--ff-serif); font-size: clamp(3rem, 7vw, 7rem); font-weight: 400; line-height: 0.98; letter-spacing: -0.025em; margin-bottom: 3rem; max-width: 16ch; }
-.case-title em { font-style: italic; color: var(--mid); }
-.case-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding-top: 3rem; border-top: 0.5px solid var(--rule); }
-.meta-label { font-family: var(--ff-mono); font-size: 0.52rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.4rem; }
-.meta-val { font-size: 0.9rem; color: var(--ink); }
-.case-section { padding: 5rem 4.5rem; border-bottom: 0.5px solid var(--rule); }
-.case-section.dark { background: var(--ink); color: var(--paper); }
-.case-section.white { background: var(--white); }
-.campaign-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 0.5px solid var(--rule); }
-.campaign-num { font-family: var(--ff-mono); font-size: 0.55rem; letter-spacing: 0.14em; color: var(--mid); }
-.campaign-title { font-family: var(--ff-serif); font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 400; letter-spacing: -0.015em; }
-.campaign-desc { font-size: 0.95rem; line-height: 1.85; color: var(--mid); max-width: 60ch; margin-bottom: 3rem; }
-.campaign-desc strong { color: var(--ink); font-weight: 400; }
-.video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; }
-.video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-.video-label { font-family: var(--ff-mono); font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
-.video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
-.video-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-.case-pull { font-family: var(--ff-serif); font-size: clamp(1.5rem, 3vw, 2.8rem); font-weight: 400; font-style: italic; line-height: 1.3; letter-spacing: -0.015em; color: rgba(247,244,239,0.5); max-width: 22ch; margin-bottom: 3rem; }
-.case-pull strong { color: var(--paper); font-style: normal; }
-.nav-case { padding: 4rem 4.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; border-top: 0.5px solid var(--rule); }
-.nav-case-item { text-decoration: none; color: inherit; padding: 2rem; border: 0.5px solid var(--rule); transition: background 0.2s; }
-.nav-case-item:hover { background: var(--white); }
-.nav-case-label { font-family: var(--ff-mono); font-size: 0.52rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.5rem; }
-.nav-case-title { font-family: var(--ff-serif); font-size: 1.1rem; font-weight: 400; color: var(--ink); }
-footer { background: var(--ink); padding: 1.5rem 4.5rem; display: flex; justify-content: space-between; align-items: center; }
-.f-logo { font-family: var(--ff-serif); font-size: 0.85rem; font-weight: 700; color: rgba(247,244,239,0.25); }
-.f-copy { font-family: var(--ff-mono); font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(247,244,239,0.15); }
-@media (max-width: 900px) {
-  nav, .case-hero, .case-section, .nav-case { padding-left: 2rem; padding-right: 2rem; }
-  .case-meta { grid-template-columns: 1fr 1fr; }
-  .video-grid, .video-grid-2 { grid-template-columns: 1fr; }
-  .nav-case { grid-template-columns: 1fr; }
-  footer { flex-direction: column; gap: 0.5rem; padding: 1.5rem 2rem; }
-}
+:root{--paper:#f7f4ef;--white:#fff;--ink:#111010;--mid:#7a756e;--rule:#e0dbd3;--ff-serif:'Libre Baskerville',Georgia,serif;--ff-sans:'Instrument Sans',sans-serif;--ff-mono:'DM Mono',monospace;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:var(--ff-sans);font-weight:300;line-height:1.6;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 4.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(247,244,239,0.96);backdrop-filter:blur(14px);border-bottom:0.5px solid var(--rule);}
+.nav-logo{font-family:var(--ff-serif);font-size:0.95rem;font-weight:700;text-decoration:none;color:var(--ink);}
+.nav-back{font-family:var(--ff-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--mid);}
+.nav-back:hover{color:var(--ink);}
+.hero{padding:10rem 4.5rem 5rem;border-bottom:0.5px solid var(--rule);}
+.eyebrow{font-family:var(--ff-mono);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:2rem;}
+.title{font-family:var(--ff-serif);font-size:clamp(3rem,7vw,7rem);font-weight:400;line-height:0.98;letter-spacing:-0.025em;margin-bottom:3rem;max-width:16ch;}
+.title em{font-style:italic;color:var(--mid);}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding-top:3rem;border-top:0.5px solid var(--rule);}
+.ml{font-family:var(--ff-mono);font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);margin-bottom:0.4rem;}
+.mv{font-size:0.9rem;color:var(--ink);}
+.sec{padding:5rem 4.5rem;border-bottom:0.5px solid var(--rule);}
+.sec.dark{background:var(--ink);color:var(--paper);}
+.sec.white{background:var(--white);}
+.ch{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3rem;padding-bottom:1.5rem;border-bottom:0.5px solid var(--rule);}
+.cn{font-family:var(--ff-mono);font-size:0.55rem;letter-spacing:0.14em;color:var(--mid);}
+.ct{font-family:var(--ff-serif);font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:400;letter-spacing:-0.015em;}
+.cd{font-size:0.95rem;line-height:1.85;color:var(--mid);max-width:60ch;margin-bottom:3rem;}
+.cd strong{color:var(--ink);font-weight:400;}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:1.5rem;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.vl{font-family:var(--ff-mono);font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-bottom:1rem;}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;}
+.pull{font-family:var(--ff-serif);font-size:clamp(1.5rem,3vw,2.8rem);font-weight:400;font-style:italic;line-height:1.3;color:rgba(247,244,239,0.5);max-width:22ch;margin-bottom:3rem;}
+.pull strong{color:var(--paper);font-style:normal;}
+.nav-case{padding:4rem 4.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;border-top:0.5px solid var(--rule);}
+.nc{text-decoration:none;color:inherit;padding:2rem;border:0.5px solid var(--rule);transition:background 0.2s;}
+.nc:hover{background:var(--white);}
+.nc-l{font-family:var(--ff-mono);font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-bottom:0.5rem;}
+.nc-t{font-family:var(--ff-serif);font-size:1.1rem;font-weight:400;color:var(--ink);}
+footer{background:var(--ink);padding:1.5rem 4.5rem;display:flex;justify-content:space-between;align-items:center;}
+.fl{font-family:var(--ff-serif);font-size:0.85rem;font-weight:700;color:rgba(247,244,239,0.25);}
+.fc{font-family:var(--ff-mono);font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(247,244,239,0.15);}
+@media(max-width:900px){nav,.hero,.sec,.nav-case{padding-left:2rem;padding-right:2rem;}.meta{grid-template-columns:1fr 1fr;}.vgrid{grid-template-columns:1fr;}.nav-case{grid-template-columns:1fr;}footer{flex-direction:column;gap:0.5rem;padding:1.5rem 2rem;}}
 </style>
 </head>
 <body>
+<nav><a href="index.html" class="nav-logo">Hamza Ahmad</a><a href="index.html" class="nav-back">← All Work</a></nav>
 
-<nav>
-  <a href="index.html" class="nav-logo">Hamza Ahmad</a>
-  <a href="index.html" class="nav-back">← All Work</a>
-</nav>
-
-<div class="case-hero">
-  <p class="case-eyebrow">Google India · Three Campaigns · 2018—2021</p>
-  <h1 class="case-title">Technology That Feels <em>Human.</em></h1>
-  <div class="case-meta">
-    <div><div class="meta-label">Brand</div><div class="meta-val">Google India</div></div>
-    <div><div class="meta-label">Campaigns</div><div class="meta-val">3 Distinct Campaigns</div></div>
-    <div><div class="meta-label">Films</div><div class="meta-val">6 Films Total</div></div>
-    <div><div class="meta-label">Agency</div><div class="meta-val">Mullen Lowe Lintas</div></div>
+<div class="hero">
+  <p class="eyebrow">Google India · Three Campaigns · 2018—2021</p>
+  <h1 class="title">Technology That Feels <em>Human.</em></h1>
+  <div class="meta">
+    <div><div class="ml">Brand</div><div class="mv">Google India</div></div>
+    <div><div class="ml">Campaigns</div><div class="mv">3 Campaigns</div></div>
+    <div><div class="ml">Films</div><div class="mv">4 + 2 Films</div></div>
+    <div><div class="ml">Agency</div><div class="mv">Mullen Lowe Lintas</div></div>
   </div>
 </div>
 
 <!-- CAMPAIGN 1 -->
-<div class="case-section white">
-  <div class="campaign-header">
-    <span class="campaign-num">01</span>
-    <h2 class="campaign-title">Make Google Do It</h2>
+<div class="sec white">
+  <div class="ch"><span class="cn">01</span><h2 class="ct">Make Google Do It — Launch of Google Assistant in India</h2></div>
+  <p class="cd">The launch campaign for Google Assistant in India. <strong>The insight: life is full of more interesting and important things to do. So let your assistant take care of the rest.</strong> Four films, four everyday Indian moments, one simple truth — you don't have to do everything yourself anymore.</p>
+  <div class="vgrid">
+    <div><p class="vl">Directions Film</p><div class="video-wrap"><iframe src="https://www.youtube.com/embed/K_LESuPJVpU" allowfullscreen loading="lazy"></iframe></div></div>
+    <div><p class="vl">List Film</p><div class="video-wrap"><iframe src="https://www.youtube.com/embed/PmAnNbJwrPU" allowfullscreen loading="lazy"></iframe></div></div>
   </div>
-  <p class="campaign-desc">Google Assistant was new to Indian consumers. The brief was to show what it could actually do — in a way that felt like an everyday Indian life, not a product demo. <strong>Four films, four relatable moments, one simple idea: you don't need to do it yourself anymore.</strong></p>
-  <div class="video-grid">
-    <div>
-      <p class="video-label">Directions Film</p>
-      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/K_LESuPJVpU" allowfullscreen loading="lazy"></iframe></div>
-    </div>
-    <div>
-      <p class="video-label">List Film</p>
-      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/PmAnNbJwrPU" allowfullscreen loading="lazy"></iframe></div>
-    </div>
-  </div>
-  <div class="video-grid">
-    <div>
-      <p class="video-label">Save Film</p>
-      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/R081yPi-YvA" allowfullscreen loading="lazy"></iframe></div>
-    </div>
-    <div>
-      <p class="video-label">Text Film</p>
-      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/IAzkxpl0bNw" allowfullscreen loading="lazy"></iframe></div>
-    </div>
+  <div class="vgrid">
+    <div><p class="vl">Save Film</p><div class="video-wrap"><iframe src="https://www.youtube.com/embed/R081yPi-YvA" allowfullscreen loading="lazy"></iframe></div></div>
+    <div><p class="vl">Text Film</p><div class="video-wrap"><iframe src="https://www.youtube.com/embed/IAzkxpl0bNw" allowfullscreen loading="lazy"></iframe></div></div>
   </div>
 </div>
 
 <!-- CAMPAIGN 2 -->
-<div class="case-section">
-  <div class="campaign-header">
-    <span class="campaign-num">02</span>
-    <h2 class="campaign-title">Money Answers Made Easy</h2>
-  </div>
-  <p class="campaign-desc">Google Search as a financial advisor — accessible, judgment-free, always available. The insight: Indians ask their phones the financial questions they're embarrassed to ask anyone else. <strong>The film made that relatable without making it patronising.</strong></p>
-  <div style="max-width: 720px;">
-    <p class="video-label">Campaign Film</p>
+<div class="sec">
+  <div class="ch"><span class="cn">02</span><h2 class="ct">Money Answers Made Easy</h2></div>
+  <p class="cd">Google Search as a financial advisor — accessible, judgment-free, always available. <strong>Indians ask their phones the financial questions they're too embarrassed to ask anyone else.</strong> The film made that relatable without making it patronising.</p>
+  <div style="max-width:720px;">
+    <p class="vl">Campaign Film</p>
     <div class="video-wrap"><iframe src="https://www.youtube.com/embed/90rA-vic0ps" allowfullscreen loading="lazy"></iframe></div>
   </div>
 </div>
 
 <!-- CAMPAIGN 3 -->
-<div class="case-section white">
-  <div class="campaign-header">
-    <span class="campaign-num">03</span>
-    <h2 class="campaign-title">Google My Business</h2>
-  </div>
-  <p class="campaign-desc">Small business owners in India were the audience — people running shops, restaurants, and services who had never thought of themselves as having an "online presence." <strong>The film made Google My Business feel like the most natural thing in the world.</strong></p>
-  <div style="max-width: 720px;">
-    <p class="video-label">Campaign Film</p>
+<div class="sec white">
+  <div class="ch"><span class="cn">03</span><h2 class="ct">Google My Business</h2></div>
+  <p class="cd">Small business owners in India who had never thought of themselves as having an "online presence." <strong>The film made Google My Business feel like the most natural next step for their business — not a technical barrier.</strong></p>
+  <div style="max-width:720px;">
+    <p class="vl">Campaign Film</p>
     <div class="video-wrap"><iframe src="https://www.youtube.com/embed/Xh9nQQI2AIk" allowfullscreen loading="lazy"></iframe></div>
   </div>
 </div>
 
-<!-- DARK PULL -->
-<div class="case-section dark">
-  <p class="case-pull">"The best brief for a tech product is always a <strong>human brief.</strong>"</p>
-  <div style="font-size: 0.95rem; line-height: 1.85; color: rgba(247,244,239,0.55); max-width: 60ch;">
-    <p>Three campaigns, three different Google products, three different human insights. The common thread across all of them: technology is only interesting when it solves a problem someone actually has. Start there and the campaign writes itself.</p>
+<div class="sec dark">
+  <p class="pull">"There are more interesting things to do. <strong>Let your assistant handle the rest.</strong>"</p>
+  <div style="font-size:0.95rem;line-height:1.85;color:rgba(247,244,239,0.55);max-width:60ch;">
+    <p>Three campaigns, three different Google products, the same underlying principle: technology is only interesting when it solves a problem someone actually has. Find that problem and the campaign writes itself.</p>
   </div>
 </div>
 
 <div class="nav-case">
-  <a href="biozyme.html" class="nav-case-item">
-    <div class="nav-case-label">← Previous</div>
-    <div class="nav-case-title">Biozyme Brand Film</div>
-  </a>
-  <a href="godaddy.html" class="nav-case-item" style="text-align: right;">
-    <div class="nav-case-label">Next →</div>
-    <div class="nav-case-title">GoDaddy India</div>
-  </a>
+  <a href="biozyme.html" class="nc"><div class="nc-l">← Previous</div><div class="nc-t">Biozyme</div></a>
+  <a href="godaddy.html" class="nc" style="text-align:right"><div class="nc-l">Next →</div><div class="nc-t">GoDaddy India</div></a>
 </div>
 
-<footer>
-  <span class="f-logo">Hamza Ahmad</span>
-  <span class="f-copy">© 2026 · CopyThat Studio · Malmö, Sweden</span>
-</footer>
+<footer><span class="fl">Hamza Ahmad</span><span class="fc">© 2026 · CopyThat Studio · Malmö, Sweden</span></footer>
 </body>
 </html>

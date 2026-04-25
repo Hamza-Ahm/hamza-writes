@@ -1,4 +1,3 @@
-<!-- IKEA BUYBACK -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,81 +6,93 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Instrument+Sans:wght@300;400&display=swap" rel="stylesheet">
 <style>
-:root { --paper: #f7f4ef; --white: #ffffff; --ink: #111010; --mid: #7a756e; --rule: #e0dbd3; --ff-serif: 'Libre Baskerville', Georgia, serif; --ff-sans: 'Instrument Sans', sans-serif; --ff-mono: 'DM Mono', monospace; }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--paper); color: var(--ink); font-family: var(--ff-sans); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
-nav { position: fixed; inset: 0 0 auto 0; z-index: 500; padding: 1.5rem 4.5rem; display: flex; justify-content: space-between; align-items: center; background: rgba(247,244,239,0.94); backdrop-filter: blur(14px); border-bottom: 0.5px solid var(--rule); }
-.nav-logo { font-family: var(--ff-serif); font-size: 0.95rem; font-weight: 700; text-decoration: none; color: var(--ink); }
-.nav-back { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--mid); transition: color 0.2s; }
-.case-hero { padding: 10rem 4.5rem 5rem; border-bottom: 0.5px solid var(--rule); }
-.case-eyebrow { font-family: var(--ff-mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 2rem; }
-.case-title { font-family: var(--ff-serif); font-size: clamp(3rem, 7vw, 7rem); font-weight: 400; line-height: 0.98; letter-spacing: -0.025em; margin-bottom: 3rem; max-width: 16ch; }
-.case-title em { font-style: italic; color: var(--mid); }
-.case-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding-top: 3rem; border-top: 0.5px solid var(--rule); }
-.meta-label { font-family: var(--ff-mono); font-size: 0.52rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.4rem; }
-.meta-val { font-size: 0.9rem; color: var(--ink); }
-.case-section { padding: 5rem 4.5rem; border-bottom: 0.5px solid var(--rule); }
-.case-section.dark { background: var(--ink); color: var(--paper); }
-.case-section.white { background: var(--white); }
-.case-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
-.case-desc { font-family: var(--ff-serif); font-size: clamp(1.1rem, 1.8vw, 1.45rem); font-weight: 400; line-height: 1.7; color: var(--mid); }
-.case-desc strong { color: var(--ink); }
-.case-body p { font-size: 0.95rem; line-height: 1.85; color: var(--mid); margin-bottom: 1.4rem; }
-.case-body strong { color: var(--ink); font-weight: 400; }
-.img-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
-.img-grid-3 img { width: 100%; height: 500px; object-fit: cover; display: block; filter: grayscale(10%); transition: filter 0.3s; }
-.img-grid-3 img:hover { filter: grayscale(0%); }
-.case-pull { font-family: var(--ff-serif); font-size: clamp(1.5rem, 3vw, 2.8rem); font-weight: 400; font-style: italic; line-height: 1.3; color: rgba(247,244,239,0.5); max-width: 22ch; margin-bottom: 3rem; }
-.case-pull strong { color: var(--paper); font-style: normal; }
-.nav-case { padding: 4rem 4.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; border-top: 0.5px solid var(--rule); }
-.nav-case-item { text-decoration: none; color: inherit; padding: 2rem; border: 0.5px solid var(--rule); transition: background 0.2s; }
-.nav-case-item:hover { background: var(--white); }
-.nav-case-label { font-family: var(--ff-mono); font-size: 0.52rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.5rem; }
-.nav-case-title { font-family: var(--ff-serif); font-size: 1.1rem; font-weight: 400; color: var(--ink); }
-footer { background: var(--ink); padding: 1.5rem 4.5rem; display: flex; justify-content: space-between; align-items: center; }
-.f-logo { font-family: var(--ff-serif); font-size: 0.85rem; font-weight: 700; color: rgba(247,244,239,0.25); }
-.f-copy { font-family: var(--ff-mono); font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(247,244,239,0.15); }
-@media (max-width: 900px) { nav, .case-hero, .case-section, .nav-case { padding-left: 2rem; padding-right: 2rem; } .case-meta { grid-template-columns: 1fr 1fr; } .case-intro { grid-template-columns: 1fr; gap: 2rem; } .img-grid-3 { grid-template-columns: 1fr; } .img-grid-3 img { height: 280px; } .nav-case { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 0.5rem; padding: 1.5rem 2rem; } }
+:root{--paper:#f7f4ef;--white:#fff;--ink:#111010;--mid:#7a756e;--rule:#e0dbd3;--ff-serif:'Libre Baskerville',Georgia,serif;--ff-sans:'Instrument Sans',sans-serif;--ff-mono:'DM Mono',monospace;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:var(--ff-sans);font-weight:300;line-height:1.6;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 4.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(247,244,239,0.96);backdrop-filter:blur(14px);border-bottom:0.5px solid var(--rule);}
+.nav-logo{font-family:var(--ff-serif);font-size:0.95rem;font-weight:700;text-decoration:none;color:var(--ink);}
+.nav-back{font-family:var(--ff-mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--mid);transition:color 0.2s;}
+.nav-back:hover{color:var(--ink);}
+.hero{padding:10rem 4.5rem 5rem;border-bottom:0.5px solid var(--rule);}
+.eyebrow{font-family:var(--ff-mono);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:2rem;}
+.title{font-family:var(--ff-serif);font-size:clamp(3rem,7vw,7rem);font-weight:400;line-height:0.98;letter-spacing:-0.025em;margin-bottom:3rem;max-width:16ch;}
+.title em{font-style:italic;color:var(--mid);}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding-top:3rem;border-top:0.5px solid var(--rule);}
+.ml{font-family:var(--ff-mono);font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);margin-bottom:0.4rem;}
+.mv{font-size:0.9rem;color:var(--ink);}
+.sec{padding:5rem 4.5rem;border-bottom:0.5px solid var(--rule);}
+.sec.dark{background:var(--ink);color:var(--paper);}
+.sec.white{background:var(--white);}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.desc{font-family:var(--ff-serif);font-size:clamp(1.1rem,1.8vw,1.45rem);font-weight:400;line-height:1.7;color:var(--mid);}
+.desc strong{color:var(--ink);}
+.body p{font-size:0.95rem;line-height:1.85;color:var(--mid);margin-bottom:1.4rem;}
+.body strong{color:var(--ink);font-weight:400;}
+.img-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:3px;}
+.img-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;}
+.img-grid-2 img,.img-grid-4 img{width:100%;height:auto;display:block;filter:grayscale(10%);transition:filter 0.3s;}
+.img-grid-2 img:hover,.img-grid-4 img:hover{filter:grayscale(0%);}
+.pull{font-family:var(--ff-serif);font-size:clamp(1.5rem,3vw,2.8rem);font-weight:400;font-style:italic;line-height:1.3;color:rgba(247,244,239,0.5);max-width:22ch;margin-bottom:3rem;}
+.pull strong{color:var(--paper);font-style:normal;}
+.nav-case{padding:4rem 4.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;border-top:0.5px solid var(--rule);}
+.nc{text-decoration:none;color:inherit;padding:2rem;border:0.5px solid var(--rule);transition:background 0.2s;}
+.nc:hover{background:var(--white);}
+.nc-l{font-family:var(--ff-mono);font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-bottom:0.5rem;}
+.nc-t{font-family:var(--ff-serif);font-size:1.1rem;font-weight:400;color:var(--ink);}
+footer{background:var(--ink);padding:1.5rem 4.5rem;display:flex;justify-content:space-between;align-items:center;}
+.fl{font-family:var(--ff-serif);font-size:0.85rem;font-weight:700;color:rgba(247,244,239,0.25);}
+.fc{font-family:var(--ff-mono);font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(247,244,239,0.15);}
+@media(max-width:900px){nav,.hero,.sec,.nav-case{padding-left:2rem;padding-right:2rem;}.meta{grid-template-columns:1fr 1fr;}.intro{grid-template-columns:1fr;gap:2rem;}.img-grid-2,.img-grid-4{grid-template-columns:1fr 1fr;}.nav-case{grid-template-columns:1fr;}footer{flex-direction:column;gap:0.5rem;padding:1.5rem 2rem;}}
 </style>
 </head>
 <body>
 <nav><a href="index.html" class="nav-logo">Hamza Ahmad</a><a href="index.html" class="nav-back">← All Work</a></nav>
-<div class="case-hero">
-  <p class="case-eyebrow">IKEA · Buyback & Resell · Global</p>
-  <h1 class="case-title">You Bring It Back, <em>Every Day.</em></h1>
-  <div class="case-meta">
-    <div><div class="meta-label">Brand</div><div class="meta-val">IKEA</div></div>
-    <div><div class="meta-label">Type</div><div class="meta-val">Print · Sustainability</div></div>
-    <div><div class="meta-label">Market</div><div class="meta-val">Global · 31 Markets</div></div>
-    <div><div class="meta-label">Deliverables</div><div class="meta-val">Print Campaign</div></div>
+
+<div class="hero">
+  <p class="eyebrow">IKEA · Buyback &amp; Resell · Global Campaign</p>
+  <h1 class="title">You Bring It Back, <em>Every Day.</em></h1>
+  <div class="meta">
+    <div><div class="ml">Brand</div><div class="mv">IKEA</div></div>
+    <div><div class="ml">Type</div><div class="mv">Print · Sustainability</div></div>
+    <div><div class="ml">Market</div><div class="mv">Global · Multiple Markets</div></div>
+    <div><div class="ml">Deliverables</div><div class="mv">Print Campaign</div></div>
   </div>
 </div>
-<div class="case-section">
-  <div class="case-intro">
-    <p class="case-desc">The IKEA Buyback & Resell Service lets customers sell their used IKEA furniture back to the store. The brief was to communicate this year-round — not just as a promotion, but as a <strong>fundamental part of how IKEA thinks about furniture and the planet.</strong></p>
-    <div class="case-body">
-      <p>The campaign ran across 31 markets. The idea: show the furniture in the middle of a real life transition. On a tram moving to a new city. On a boat setting sail for a new home. On an escalator going back to shine again.</p>
-      <p>The copy did the heavy lifting — "You bring it back, we buy it back, every day." "Setting sail for a new home." "It's time to shine again." Each line earned its place alongside the image.</p>
+
+<div class="sec">
+  <div class="intro">
+    <p class="desc">The IKEA Buyback &amp; Resell Service lets customers sell their used IKEA furniture back to the store, year-round. The brief: make this feel like <strong>a philosophy, not a promotion.</strong></p>
+    <div class="body">
+      <p>The idea was to show IKEA furniture in the middle of a real life transition. Not in a showroom. Not on a white background. On a tram moving to a new city. On a boat setting sail for a new home. On an escalator, going back to shine again. Buckled up for the next chapter.</p>
+      <p>Each execution found a different human moment of transition and placed the furniture inside it. The copy earned its place alongside every image — "You bring it back, we buy it back, every day." "Setting sail for a new home." "It's time to shine again." "Buckled up for the next chapter."</p>
+      <p>Sustainability messaging that never felt like a sustainability message.</p>
     </div>
   </div>
 </div>
-<div class="case-section white">
-  <div class="img-grid-3">
+
+<div class="sec white">
+  <div class="img-grid-2" style="margin-bottom:3px;">
     <img src="ikea-buyback-tram.jpg" alt="You bring it back — Tram">
     <img src="ikea-buyback-boat.jpg" alt="Setting sail for a new home">
+  </div>
+  <div class="img-grid-2">
     <img src="ikea-buyback-escalator.jpg" alt="It's time to shine again">
+    <img src="ikea-buyback-rickshaw.jpg" alt="Buckled up for the next chapter">
   </div>
 </div>
-<div class="case-section dark">
-  <p class="case-pull">"31 markets. One idea. <strong>Furniture that never really leaves.</strong>"</p>
-  <div style="font-size: 0.95rem; line-height: 1.85; color: rgba(247,244,239,0.55); max-width: 60ch;">
-    <p>A sustainability message that didn't feel like a sustainability message. It felt like an invitation to be part of something — a circular system that benefits everyone. The furniture doesn't end. It just finds a new story.</p>
+
+<div class="sec dark">
+  <p class="pull">"Sustainability messaging that never felt like <strong>a sustainability message.</strong>"</p>
+  <div style="font-size:0.95rem;line-height:1.85;color:rgba(247,244,239,0.55);max-width:60ch;">
+    <p>The furniture doesn't end. It just finds a new story. That was the idea — and it worked across every market because it was rooted in something universally true about the things we own and the lives we live.</p>
   </div>
 </div>
+
 <div class="nav-case">
-  <a href="ikea-secondhand.html" class="nav-case-item"><div class="nav-case-label">← Previous</div><div class="nav-case-title">IKEA Second-hand</div></a>
-  <a href="biozyme.html" class="nav-case-item" style="text-align:right"><div class="nav-case-label">Next →</div><div class="nav-case-title">Biozyme Brand Film</div></a>
+  <a href="ikea-secondhand.html" class="nc"><div class="nc-l">← Previous</div><div class="nc-t">IKEA Second-hand</div></a>
+  <a href="ikea-homeimprover.html" class="nc" style="text-align:right"><div class="nc-l">Next →</div><div class="nc-t">IKEA Home Improver</div></a>
 </div>
-<footer><span class="f-logo">Hamza Ahmad</span><span class="f-copy">© 2026 · CopyThat Studio · Malmö, Sweden</span></footer>
+
+<footer><span class="fl">Hamza Ahmad</span><span class="fc">© 2026 · CopyThat Studio · Malmö, Sweden</span></footer>
 </body>
 </html>
